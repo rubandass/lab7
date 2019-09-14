@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\PageController;
+
+
+Route::get('/index', 'PageController@index');
+Route::get('/', 'PageController@searchPlayers');
+Route::post('/', 'PageController@searchPlayers');
+Route::post('/showPlayers', 'PageController@showPlayers');
