@@ -92,11 +92,11 @@ background:#2f2f31;
 }
 
 .bg-img{
+	background-image: url('cup.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
 }
 
 .bg-dark-transparent{

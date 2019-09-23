@@ -11,46 +11,42 @@
 </head>
 
 <body>
-	<div class="container-fluid col-md-10 offset-md-1 mt-2">
-
+	<div class="container-fluid col-md-10 mt-2">
 		<h4 class="text-center text-dark">Cricket players information</h4>
 		<div class="row">
 			
-				@foreach($result as $player)
-			
+			@foreach($result as $player)
 				<div class="col-md-4 space_div">
-				
 					<div class="card border-0 br-5" style="width: 18rem;">
 						<div class="ribbon">
 							<span class="ribbon1">
 							  <span>{{$player->country->name}}</span>
 							</span>
 						</div>
+						
 						<img class="card-img-top" src="{{asset('images/' . $player->image)}}"  alt="{{$player->name}}">
 					
 						<div class="card-body">
 							<h5 class="card-title text-center text-dark">{{$player->name}} ({{$player->age}})<br/></h5>
 							<div class="row">
-						
-							 <ul class="list-group list-group-flush">
-								<li class="list-group-item"><b>Id:</b> {{$player->id}}</li>
-								<li class="list-group-item"><b>Role:</b> {{$player->role}}</li>
-								<li class="list-group-item"><b>Batting:</b> {{$player->batting}}</li>
-								<li class="list-group-item"><b>Bowling:</b> {{$player->bowling}}</li>
-								<li class="list-group-item"><b>ODI Runs:</b> {{$player->odiRuns}}</li>
-							 </ul>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item"><b>Id:</b> {{$player->id}}</li>
+									<li class="list-group-item"><b>Role:</b> {{$player->role}}</li>
+									<li class="list-group-item"><b>Batting:</b> {{$player->batting}}</li>
+									<li class="list-group-item"><b>Bowling:</b> {{$player->bowling}}</li>
+									<li class="list-group-item"><b>ODI Runs:</b> {{$player->odiRuns}}</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-				@endforeach
-			
+			@endforeach
 		</div>
 
-		<div class="space_div">
+		<div class="col text-center p-3">
 			<form method="post" action="{{url('/')}}">
 				{{csrf_field()}}
-				<button class="btn btn-primary offset-md-6" type="submit" name="back">back</button>
+				<button class="btn btn-primary" type="submit" name="back">back</button>
 			</form>
 		</div>
 	</div>
